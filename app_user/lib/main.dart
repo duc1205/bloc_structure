@@ -1,4 +1,5 @@
 import 'package:app_user/bindings/injector.dart';
+import 'package:app_user/modules/auth/presentation/login_view.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const LoginView(),
     );
   }
 }

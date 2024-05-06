@@ -1,6 +1,3 @@
-import 'package:injectable/injectable.dart';
-
-@singleton
 abstract class PreferenceManager {
   String getString(String key, {String defaultValue = ""});
 

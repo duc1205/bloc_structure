@@ -1,8 +1,10 @@
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 
 import '/network/pretty_dio_logger.dart';
 import '/network/request_headers.dart';
 
+@lazySingleton
 class DioProvider {
   static String baseUrl = 'http://localhost:3000';
 
