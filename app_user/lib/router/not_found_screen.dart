@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of '../router/app_router.dart';
 
 class NotFoundScreen extends StatelessWidget {
   const NotFoundScreen({super.key});

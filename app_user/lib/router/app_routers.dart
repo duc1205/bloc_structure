@@ -1,3 +1,5 @@
+part of '../router/app_router.dart';
+
 enum AppRoutes {
   login,
   home,
