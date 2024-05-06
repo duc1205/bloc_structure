@@ -1,8 +1,9 @@
-import 'package:app_user/core/exceptions/data_error.dart';
-import 'package:app_user/modules/auth/domain/repositories/auth_repository.dart';
 import 'package:dio/dio.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:injectable/injectable.dart';
+
+import '../../../../core/core.dart';
+import '../../domain/repositories/auth_repository.dart';
 
 @LazySingleton(as: AuthRepository)
 class AuthRemoteRepositoryImpl implements AuthRepository {

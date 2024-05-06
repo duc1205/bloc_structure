@@ -23,7 +23,6 @@ class DioRequestRetrier {
   }
 
   Future<Map<String, String>> getCustomHeaders() async {
-    
     final customHeaders = {'content-type': 'application/json'};
     // if (accessToken.trim().isNotEmpty) {
     //   customHeaders.addAll({

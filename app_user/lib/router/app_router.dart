@@ -1,8 +1,9 @@
-import 'package:app_user/modules/auth/presentation/login_view.dart';
-import 'package:app_user/router/app_routers.dart';
-import 'package:app_user/router/not_found_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
+import '../modules/auth/presentation/login_view.dart';
+import 'app_routers.dart';
+import 'not_found_screen.dart';
 
 GoRouter goRouter() {
   final defaultLocation = AppRoutes.login.initLocation;

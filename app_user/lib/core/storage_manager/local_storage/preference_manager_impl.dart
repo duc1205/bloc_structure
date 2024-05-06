@@ -1,6 +1,7 @@
-import 'package:app_user/core/storage_manager/local_storage/preference_manager.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'preference_manager.dart';
 
 @lazySingleton
 class PreferenceManagerImpl implements PreferenceManager {

@@ -1,8 +1,9 @@
-import 'package:app_user/bindings/injector.dart';
-import 'package:app_user/modules/auth/cubit/login_cubit.dart';
-import 'package:app_user/modules/auth/domain/usecases/login_usecase.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../bindings/injector.dart';
+import '../cubit/login_cubit.dart';
+import '../domain/usecases/login_usecase.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});

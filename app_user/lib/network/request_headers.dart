@@ -1,7 +1,8 @@
-import 'package:app_user/bindings/injector.dart';
-import 'package:app_user/core/constants/storage_key_constants.dart';
 import 'package:dio/dio.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../bindings/injector.dart';
+import '../core/core.dart';
 
 class RequestHeaderInterceptor extends InterceptorsWrapper {
   final SharedPreferences _preferenceManager = getIt<SharedPreferences>();

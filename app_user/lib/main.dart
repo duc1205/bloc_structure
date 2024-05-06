@@ -1,4 +1,4 @@
-import 'package:app_user/bindings/injector.dart';
+import 'bindings/injector.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

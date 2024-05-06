@@ -1,7 +1,8 @@
-import 'package:app_user/core/core.dart';
-import 'package:app_user/modules/auth/domain/repositories/auth_repository.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:injectable/injectable.dart';
+
+import '../../../../core/core.dart';
+import '../repositories/auth_repository.dart';
 
 @lazySingleton
 class LoginUseCase {

@@ -1,10 +1,11 @@
-import 'package:app_user/modules/auth/domain/usecases/login_usecase.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'login_state.dart';
+import '../domain/usecases/login_usecase.dart';
+
 part 'login_cubit.freezed.dart';
+part 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   LoginUseCase loginUseCase;
