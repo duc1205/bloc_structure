@@ -1,6 +1,8 @@
 import 'package:app_user/network/dio_provider.dart';
+import 'package:app_user/router/app_router.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:go_router/go_router.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'injector.config.dart';
@@ -17,4 +19,7 @@ abstract class RegisterModule {
 
   @lazySingleton
   Dio get getDio => DioProvider.dioWithHeaderToken;
+
+  @singleton
+  GoRouter get goRoute => goRouter();
 }
