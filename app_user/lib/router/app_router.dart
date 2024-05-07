@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../modules/auth/presentation/login_view.dart';
+import '../modules/auth/presentation/login_screen/login_view.dart';
+
 part 'app_routers.dart';
 part 'not_found_screen.dart';
 

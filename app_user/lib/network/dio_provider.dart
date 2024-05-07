@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:talker_dio_logger/talker_dio_logger.dart';
 
-import '/network/pretty_dio_logger.dart';
 import '/network/request_headers.dart';
 
 @lazySingleton
@@ -9,18 +10,6 @@ class DioProvider {
   static String baseUrl = 'http://localhost:3000';
 
   static Dio? _instance;
-
-  static const int _maxLineWidth = 90;
-
-  static final _prettyDioLogger = PrettyDioLogger(
-    requestHeader: true,
-    requestBody: true,
-    responseBody: true,
-    responseHeader: false,
-    error: true,
-    compact: true,
-    maxWidth: _maxLineWidth,
-  );
 
   static final BaseOptions _options = BaseOptions(
     baseUrl: baseUrl,
@@ -32,15 +21,11 @@ class DioProvider {
     if (_instance == null) {
       _instance = Dio(_options);
 
-      _instance!.interceptors.add(_prettyDioLogger);
-
-      return _instance!;
-    } else {
-      _instance!.interceptors.clear();
-      _instance!.interceptors.add(_prettyDioLogger);
-
       return _instance!;
     }
+    _instance!.interceptors.clear();
+
+    return _instance!;
   }
 
   ///returns a Dio client with Access token in header
@@ -60,8 +45,15 @@ class DioProvider {
 
   static _addInterceptors() {
     _instance ??= httpDio;
-    _instance!.interceptors.clear();
     _instance!.interceptors.add(RequestHeaderInterceptor());
-    _instance!.interceptors.add(_prettyDioLogger);
+    if (kDebugMode) {
+      _instance!.interceptors.add(
+        TalkerDioLogger(
+          settings: const TalkerDioLoggerSettings(
+            printRequestHeaders: true,
+          ),
+        ),
+      );
+    }
   }
 }

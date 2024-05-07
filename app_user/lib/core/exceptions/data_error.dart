@@ -9,9 +9,10 @@ class DataError implements Exception {
     this.message = 'Error message',
   });
 
-  //Error code
+  // Error code
   final int? code;
-  //Error code dạng string
+
+  // Error code format string
   final String message;
 
   factory DataError.unknownError() => DataError(
