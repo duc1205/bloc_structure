@@ -3,7 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'preference_manager.dart';
 
-@lazySingleton
+@LazySingleton(as: PreferenceManager)
 class PreferenceManagerImpl implements PreferenceManager {
   final SharedPreferences preferences;
 

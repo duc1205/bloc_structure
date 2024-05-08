@@ -1,8 +1,19 @@
-import 'bindings/injector.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:talker_bloc_logger/talker_bloc_logger.dart';
+import 'package:talker_flutter/talker_flutter.dart';
+
+import 'bindings/injector.dart';
 
 void main() async {
+  TalkerFlutter.init();
+  Bloc.observer = TalkerBlocObserver(
+    settings: const TalkerBlocLoggerSettings(
+      printChanges: true,
+    ),
+  );
+  WidgetsFlutterBinding.ensureInitialized();
   await configureDependencies();
   runApp(const MyApp());
 }
@@ -13,7 +24,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Flutter Demo',
+      title: 'LRD',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,

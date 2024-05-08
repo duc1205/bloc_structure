@@ -23,4 +23,6 @@ abstract class RegisterModule {
 
   @singleton
   GoRouter get goRoute => goRouter();
+
+  
 }

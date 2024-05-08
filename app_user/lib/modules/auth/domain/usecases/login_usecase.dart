@@ -8,8 +8,7 @@ import '../repositories/auth_repository.dart';
 class LoginUseCase {
   final AuthRepository _authRepository;
 
-  LoginUseCase({required AuthRepository authRepository})
-      : _authRepository = authRepository;
+  LoginUseCase({required AuthRepository authRepository}) : _authRepository = authRepository;
 
-  Future<Either<DataError, bool>> run() async => _authRepository.login();
+  Future<Either<DataError, bool>> login() async => _authRepository.login();
 }
